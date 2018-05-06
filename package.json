@@ -1,0 +1,30 @@
+{
+  "name": "crud_mongo",
+  "version": "1.0.0",
+  "description": "\"building the web app with basic crud in mongo\"",
+  "main": "index.js",
+  "scripts": {
+    "test": "\"nothings\"",
+    "serve":"nodemon index"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nguyenlyminhman/crud_mongo.git"
+  },
+  "keywords": [
+    "\"crud",
+    "mongo\""
+  ],
+  "author": "nguyenlyminhman",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nguyenlyminhman/crud_mongo/issues"
+  },
+  "homepage": "https://github.com/nguyenlyminhman/crud_mongo#readme",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "ejs": "^2.6.1",
+    "express": "^4.16.3",
+    "nodemon": "^1.17.4"
+  }
+}
