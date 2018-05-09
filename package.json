@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "\"nothings\"",
-    "serve":"nodemon index"
+    "serve": "nodemon app.js"
   },
   "repository": {
     "type": "git",
@@ -23,8 +23,11 @@
   "homepage": "https://github.com/nguyenlyminhman/crud_mongo#readme",
   "dependencies": {
     "body-parser": "^1.18.2",
+    "config": "^1.30.0",
     "ejs": "^2.6.1",
     "express": "^4.16.3",
-    "nodemon": "^1.17.4"
+    "mongodb": "^3.0.7",
+    "nodemon": "^1.17.4",
+    "q": "^1.5.1"
   }
 }
