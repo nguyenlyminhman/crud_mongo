@@ -4,24 +4,24 @@
 <div class="row">
     <div class="col-lg-4"></div>
     <div class="col-lg-4">
-        <form action="/user/add-new" method="POST">
+        <form action="" method="">
             <div class="form-group">
                 <label for="email">Email address</label>
-                <input type="email" name="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Email" value="<%= data.email%>" disabled required>
+                <input type="email" name="email" id="email" class="form-control" aria-describedby="emailHelp" placeholder="Email" value="<%= data.email%>" disabled required>
                 <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
             </div>
             <div class="form-group">
                 <label for="fullname">Fullname</label>
-                <input type="text" name="fullname" minlength="3" maxlength="40" class="form-control" id="fullname" value="<%= data.fullname%>" placeholder="Fullname" required>
+                <input type="text" name="fullname" id="fullname"  minlength="3" maxlength="40" class="form-control" value="<%= data.fullname%>" placeholder="Fullname" required>
             </div>
             <div class="form-group">
                 <label for="age">Age</label>
-                <input type="number" name="age" min="16" max="120" class="form-control" id="age" value="<%= data.age%>" placeholder="Age" required>
+                <input type="number" name="age" id="age" min="16" max="120" class="form-control" value="<%= data.age%>" placeholder="Age" required>
             </div>
-            <button type="submit" class="btn btn-primary">Submit</button> 
+            <input type="hidden" id="_id" value="<%=data._id%>" />
+            <input type="button" class="btn btn-primary" id="btn_update" value="Submit"/>
             <button type="reset" class="btn btn-info">Reset</button>
             <a href="/" class="btn btn-warning">Home</a>
-
         </form>
     </div>
 </div>
