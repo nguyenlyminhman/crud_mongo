@@ -1,1 +1,3 @@
-export const db = "mongodb://localhost:27017/crudmongo";
+module.exports={
+    db: "mongodb://localhost:27017/crudmongo"
+}

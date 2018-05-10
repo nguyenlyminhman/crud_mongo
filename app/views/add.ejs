@@ -1,4 +1,28 @@
 <%- include layout/header %>
-    
+<br/><br/>
+    <div class="row">
+        <div class="col-lg-4"></div>
+        <div class="col-lg-4">
+            <form action="/user/add-new" method="POST">
+                <div class="form-group">
+                    <label for="email">Email address</label>
+                    <input type="email" name="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Email" required>
+                    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                </div>
+                <div class="form-group">
+                    <label for="fullname">Fullname</label>
+                    <input type="text" name="fullname" minlength="3" maxlength="40" class="form-control" id="fullname" placeholder="Fullname" required>
+                </div>
+                <div class="form-group">
+                    <label for="age">Age</label>
+                    <input type="number" name="age" min="16" max="120" class="form-control" id="age" placeholder="Age" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button> 
+                <button type="reset" class="btn btn-info">Reset</button>
+                <a href="/user/view-list" class="btn btn-warning">User List</a>
+                <a href="/" class="btn btn-warning">Home</a>
 
-<%- include layout/footer %>
+            </form>
+        </div>
+    </div>
+    <%- include layout/footer %>

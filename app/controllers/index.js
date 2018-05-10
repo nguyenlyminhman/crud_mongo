@@ -1,21 +1,39 @@
 const express = require("express");
 const router = express.Router();
-var MongoClient = require('mongodb').MongoClient;
+const mongoose = require('mongoose');
+const Users = require('../model/Users');
 
 router.get('/', (req, res) => {
+   Users.find({}).exec((err, data)=>{
     res.render('index', {
-        title: "Crud with mongodb"
+        title: "Add new user",
+        data: data
     });
+   })
 });
 
 router.get('/user/add-new', (req, res) => {
+   
     res.render('add', {
-        title: "Add new user"
+        title: "List the user"
     });
 });
 
-router.get('/user/view-list', (req, res) => {
-    res.render('list', {
+router.post('/user/add-new', (req, res) => {
+    let userParams = req.body;
+
+    let user = new Users(userParams);
+
+    user.save((err, success)=>{
+        if(!err){
+            res.redirect("/");
+        }
+    })
+
+});
+
+router.get('/user/edit', (req, res) => {
+    res.render('edit', {
         title: "List the user"
     });
 });
