@@ -13,7 +13,6 @@ app.set("views", __dirname + "/app/views");
 app.set("view engine", "ejs");
 app.use("/static", express.static(__dirname + "/public"));
 
-// mongoose.connect('mongodb://localhost/crudmongo');
 mongoose.connect('mongodb://127.0.0.1:27017/crudmongo');
 
 app.use(controller);

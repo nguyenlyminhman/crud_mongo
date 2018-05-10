@@ -21,21 +21,22 @@ router.get('/user/add-new', (req, res) => {
 
 router.post('/user/add-new', (req, res) => {
     let userParams = req.body;
-
     let user = new Users(userParams);
-
     user.save((err, success)=>{
         if(!err){
             res.redirect("/");
         }
     })
-
 });
 
-router.get('/user/edit', (req, res) => {
-    res.render('edit', {
-        title: "List the user"
-    });
+router.get('/user/edit/:id', (req, res) => {
+    let id = req.params.id;
+    Users.findById(id, (err, data)=>{
+        res.render('edit', {
+            title: "Edit the user",
+            data: data
+        });
+    })
 });
 
 module.exports = router;
