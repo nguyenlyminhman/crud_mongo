@@ -13,7 +13,6 @@ router.get('/', (req, res) => {
 });
 
 router.get('/user/add-new', (req, res) => {
-
     res.render('add', {
         title: "List the user"
     });
@@ -54,9 +53,15 @@ router.put('/user/edit/', (req, res) => {
     })
 });
 
-router.delete('/user/edit/', (req, res) => {
-    let id = req.params;
-
+router.delete('/user/delete', (req, res) => {
+    let user = req.body;
+    Users.findByIdAndRemove(user._id, (err, cb)=>{
+        if (err) {
+            res.json({ status_code: 500 });
+        } else {
+            res.json({ status_code: 200 });
+        }
+    })
 
 });
 
