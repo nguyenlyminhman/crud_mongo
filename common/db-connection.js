@@ -1,3 +1,4 @@
+let config = require('config');
 module.exports={
-    db: "mongodb://localhost:27017/crudmongo"
+    db: "mongodb://"+ config.get("db.host") + ":"+ config.get("db.port")+"/"+config.get("db.name")
 }
